@@ -1,0 +1,218 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+}
+
+
+:root {
+  --background-color-body: #20bfa9;
+  --background-head-card: #282828;
+  --background-body-card: #ffffff;
+  --background-button: #f73859;
+  --head-color: #ffffff;
+  --head-color-second: #4caf4f;
+  --text-color: #000;
+  --margin-repeated: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background-color: var(--background-color-body);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  width: 900px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+@media (max-width:600px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 60px;
+  }
+}
+
+main::after {
+  content: "";
+  width: 1px;
+  height: 100%;
+  background-color: var(--background-body-card);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+main::before {
+  content: "or";
+  width: 40px;
+  height: 40px;
+  background-color: var(--background-body-card);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  line-height: 40px;
+  color: var(--background-color-body);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+@media (max-width:600px) {
+  main::after {
+    width: 90%;
+    max-width: 350px;
+    height: 2px;
+    top: 50%;
+    z-index: -1;
+  }
+}
+
+main section.card {
+  background-image: linear-gradient(var(--background-head-card) 100px,
+      var(--background-body-card) 100px,
+      var(--background-body-card) 100%);
+  width: 40%;
+  min-width: 250px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+@media (max-width:600px) {
+  main section.card {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+main section.card .title h2 {
+  color: var(--head-color);
+  text-align: center;
+  padding-top: 18px;
+  font-size: 24px;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+main section.card .title span {
+  color: var(--head-color-second);
+  margin-left: 5px;
+}
+
+main section.card .content {
+  background-color: var(--background-body-card);
+  margin-top: 18px;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  width: calc(100% - 60px);
+  height: 80%;
+  font-weight: 500;
+  text-align: center;
+  text-transform: capitalize;
+  box-shadow: 0 0 10px 0 #0000006b;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+main section.card .content h3 {
+  color: var(--text-color);
+  font-size: 18px;
+  margin: 20px;
+}
+
+main section.card .content ul {
+  list-style: none;
+  text-align: start;
+  margin: 30px;
+  margin-left: 40px;
+}
+
+main section.card .content ul li {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 15px;
+  position: relative;
+}
+
+main section.card .content ul li::before {
+  content: "";
+  background-color: var(--background-button);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-20px, -50%);
+  -webkit-transform: translate(-20px, -50%);
+  -moz-transform: translate(-20px, -50%);
+  -ms-transform: translate(-20px, -50%);
+  -o-transform: translate(-20px, -50%);
+}
+
+main section.card .content button {
+  background-color: var(--background-button);
+  width: 60%;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+main section.card .content button a {
+  color: var(--head-color);
+  font-size: 14px;
+  text-transform: capitalize;
+}
